@@ -282,7 +282,7 @@ class _Intro extends StatelessWidget {
         const SizedBox(height: 12),
         Text('Абдурасулов Давлатбек', style: theme.textTheme.headlineLarge),
         const SizedBox(height: 12),
-        Text('Junior Programmer', style: theme.textTheme.titleLarge),
+        Text('Full-Stack Developer', style: theme.textTheme.titleLarge),
         const SizedBox(height: 20),
         const Text(
           'Создаю мобильные приложения на Flutter, работаю с API и пишу на Dart и Python. '
