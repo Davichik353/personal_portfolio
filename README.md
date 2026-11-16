@@ -93,7 +93,7 @@
 ## 🛠 Технологии
 
 - **Flutter / Dart**
-- **Google Fonts**
+- **Roboto** — локальный шрифт с поддержкой кириллицы; загружается вместе с приложением
 - **url_launcher**
 - **Material Design 3**
 - **Responsive Layout**
@@ -108,6 +108,55 @@
 
 ## 🚀 Как запустить
 
-1. Клонируй репозиторий:
-   ```bash
-   git clone https://github.com/Davichik353/personal_portfolio.git 
+Нужен Flutter с Dart **3.8.1 или новее**. Установи SDK по [официальной инструкции](https://docs.flutter.dev/get-started/install), затем проверь окружение командой `flutter doctor`.
+
+```bash
+git clone https://github.com/Davichik353/personal_portfolio.git
+cd personal_portfolio
+flutter pub get
+flutter run -d chrome
+```
+
+Для запуска на телефоне или эмуляторе найди устройство командой `flutter devices` и выполни `flutter run -d <device-id>`. Для Android нужен Android SDK; для iOS — macOS и Xcode.
+
+## Проверки
+
+```bash
+dart format --output=none --set-exit-if-changed lib test
+flutter analyze
+flutter test
+```
+
+## Сборка веб-версии
+
+Для размещения в корне домена:
+
+```bash
+flutter build web --release
+```
+
+Готовые файлы находятся в `build/web`. Для просмотра сборки локально запусти HTTP-сервер из этой папки:
+
+```bash
+cd build/web
+python3 -m http.server 8080
+```
+
+Открой `http://localhost:8080`.
+
+Для GitHub Pages по адресу `https://davichik353.github.io/personal_portfolio/` собирай приложение с соответствующим базовым путём:
+
+```bash
+flutter build web --release --base-href /personal_portfolio/
+```
+
+Затем опубликуй содержимое `build/web` выбранным способом. Команда сборки сама не включает GitHub Pages и не публикует сайт. При размещении на собственном домене в корне сайта используй базовый путь `/`.
+
+## Ресурсы и настройка
+
+- Персональные сведения и ссылки находятся в `lib/`.
+- Авторский аватар: `assets/images/avatar.png`.
+- Сертификат: `assets/certificates/certificate.png`; исходный PDF лежит рядом.
+- Шрифт [Roboto](https://github.com/google/fonts/tree/main/ofl/roboto) хранится в `assets/fonts/Roboto-Variable.ttf`, семейство Flutter — `PortfolioSans`. Лицензия SIL Open Font License находится в `assets/fonts/OFL.txt`.
+
+Контент, аватар, сертификат и шрифт доступны без загрузки из сети. Внешние ссылки открываются в браузере, а email и телефон — в доступном почтовом приложении или приложении для звонков.
