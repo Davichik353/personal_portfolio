@@ -606,3 +606,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-variation-settings: 'SOFT' 80
 @supports (font-size: 1cqw) {
   .masthead-title { font-size: 16.5cqw; }
 }
+
+.not-found { display: flex; min-height: 100dvh; flex-direction: column; align-items: flex-start; justify-content: center; gap: 24px; }
+.not-found h1 { max-width: 900px; font-family: var(--display); font-size: clamp(54px, 9vw, 112px); font-weight: 650; line-height: .95; text-transform: lowercase; }
+.not-found > p:not(.eyebrow) { max-width: 600px; font-size: 20px; }

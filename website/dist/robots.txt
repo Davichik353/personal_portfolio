@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davichik353.github.io/personal_portfolio/sitemap.xml
