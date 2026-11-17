@@ -536,6 +536,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-variation-settings: 'SOFT' 80
 .timeline-item + .timeline-item { margin-top: 16px; }
 .timeline-body h3 { font-size: 34px; text-transform: lowercase; }
 .education-item { padding: 28px; border: 1.5px solid var(--line); border-radius: 20px; background: var(--surface); }
+.education-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .certificate-layout { padding: 32px; border: 1.5px solid var(--line); border-radius: 20px; background: var(--surface); }
 .certificate-preview { border: 1.5px solid var(--line); border-radius: 14px; overflow: hidden; transform: rotate(-1deg); }
 .certificate-preview img { filter: none; }
@@ -565,6 +566,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-variation-settings: 'SOFT' 80
   .section-heading { grid-template-columns: 46px minmax(0, 1fr); }
   .section-intro { grid-column: 2; }
   .certificate-card { grid-template-columns: minmax(150px, .8fr) minmax(0, 1.2fr); }
+  .education-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 580px) {
@@ -593,6 +595,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-variation-settings: 'SOFT' 80
   .timeline-item { padding: 22px; }
   .timeline-item:last-child { padding-bottom: 22px; }
   .certificate-layout { padding: 20px; }
+  .education-grid { grid-template-columns: 1fr; }
   .certificate-card { grid-template-columns: 1fr; }
   .contact-section { width: 100%; padding: 58px 24px; border-radius: 40px 40px 0 0; }
 }
