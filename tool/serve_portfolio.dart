@@ -6,6 +6,8 @@ const _mimeTypes = <String, String>{
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.json': 'application/json; charset=utf-8',
+  '.jpeg': 'image/jpeg',
+  '.jpg': 'image/jpeg',
   '.md': 'text/markdown; charset=utf-8',
   '.pdf': 'application/pdf',
   '.png': 'image/png',
