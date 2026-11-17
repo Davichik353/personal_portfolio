@@ -1,12 +1,13 @@
 {
-    "name": "per_port",
-    "short_name": "per_port",
+    "name": "Davichik Portfolio",
+    "short_name": "Davichik",
+    "lang": "ru",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
+    "background_color": "#F7F9FC",
+    "theme_color": "#1565C0",
+    "description": "Портфолио Flutter-разработчика Абдурасулова Давлатбека: проекты, навыки и контакты.",
+    "orientation": "any",
     "prefer_related_applications": false,
     "icons": [
         {
