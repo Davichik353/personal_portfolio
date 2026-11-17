@@ -74,8 +74,8 @@ li + li { margin-top: 6px; }
 .nav-links a:hover { text-decoration: underline; }
 
 /* A compressed serif masthead is the visual anchor from the Miranda source. */
-.masthead { width: min(var(--container), calc(100% - 64px)); margin: 24px auto 0; padding: 26px 10px 38px; color: var(--paper); background: var(--ink); text-align: center; }
-.masthead-title { font-family: var(--display); font-size: clamp(42px, calc((100vw - 96px) * .185), 252px); font-weight: 800; line-height: .78; letter-spacing: -.075em; white-space: nowrap; text-wrap: nowrap; }
+.masthead { container-type: inline-size; width: min(var(--container), calc(100% - 64px)); margin: 24px auto 0; padding: 26px 10px 38px; color: var(--paper); background: var(--ink); text-align: center; }
+.masthead-title { font-family: var(--display); font-size: calc((min(100vw, 1504px) - 84px) * .165); font-weight: 800; line-height: .78; letter-spacing: -.075em; white-space: nowrap; text-wrap: nowrap; }
 .masthead-subtitle { display: flex; justify-content: space-between; gap: 16px; margin-top: 28px; font-size: 12px; }
 .editorial-strip { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-block: 12px; border-bottom: 1px solid var(--ink); font-size: 14px; }
 .editorial-stamp, .stamp { display: inline-block; padding: 4px 7px; border-radius: 2px; background: var(--accent); color: var(--paper); font: 300 13px/1.2 var(--font); }
@@ -221,7 +221,7 @@ li + li { margin-top: 6px; }
   .header-inner > .brand { grid-column: 1; justify-self: start; }
   .header-tools { grid-column: 2; gap: 12px; }
   .masthead { width: calc(100% - 40px); margin-top: 20px; padding-block: 20px 28px; }
-  .masthead-title { font-size: calc((100vw - 64px) * .185); }
+  .masthead-title { font-size: calc((100vw - 60px) * .165); }
   .hero { column-gap: 24px; grid-template-columns: minmax(0, 1.35fr) minmax(180px, 1fr); }
   .hero-title { font-size: 47px; }
   .hero-lead { font-size: 20px; }
@@ -258,7 +258,7 @@ li + li { margin-top: 6px; }
   #nav-menu a { padding-block: 10px; border-bottom: 1px solid var(--ink); font-size: 21px; }
   #nav-menu a:last-child { border-bottom: 0; }
   .masthead { margin-top: 16px; padding: 14px 6px 20px; }
-  .masthead-title { font-size: calc((100vw - 60px) * .185); line-height: .82; }
+  .masthead-title { font-size: calc((100vw - 52px) * .165); line-height: .82; }
   .masthead-subtitle { font-size: 10px; margin-top: 18px; }
   .editorial-strip { gap: 6px 12px; font-size: 12px; }
   .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 32px; }
@@ -348,7 +348,7 @@ li + li { margin-top: 6px; }
 /* Keep real text usable under user font enlargement and translated labels. */
 .brand { min-width: 0; }
 .brand-name { overflow-wrap: anywhere; }
-.masthead-title { white-space: normal; text-wrap: balance; overflow-wrap: anywhere; }
+.masthead-title { white-space: nowrap; text-wrap: nowrap; overflow-wrap: normal; word-break: normal; }
 .project-media:has(.project-type-art) { min-height: 14em; }
 [dir='rtl'] .about-copy p:first-child::first-letter { float: none; margin: 0; font: inherit; }
 @media (max-width: 800px) {
@@ -411,4 +411,9 @@ li + li { margin-top: 6px; }
 .certificate-preview img { filter: none; }
 @media (min-width: 701px) and (max-width: 1000px) {
   .featured-intro-title { font-size: clamp(26px, 3.3vw, 33px); }
+}
+
+/* Fit the full brand to its actual inset width. Playfair 800 is wider than 400. */
+@supports (font-size: 1cqw) {
+  .masthead-title { font-size: 16.5cqw; }
 }
