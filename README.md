@@ -1,14 +1,35 @@
-# 👨‍💻 Davichik353 — Flutter разработчик
+# Davichik353 — Full-Stack Developer
 
 Привет! 👋  
-Это мой личный проект — Flutter-портфолио. Здесь я собрал информацию о себе, моих навыках, опыте и проектах.
+Это мой веб-сайт портфолио в стиле Miranda: коммерческие проекты, технологии, опыт и контакты. Исходное Flutter-приложение также сохранено в репозитории.
+
+## Запуск веб-сайта
+
+На Windows дважды нажми `run_website.bat`. Либо выполни в терминале:
+
+```bash
+dart run tool/serve_portfolio.dart
+```
+
+Откроется `http://localhost:5173` с выбранным дизайном и проектами **VIVID ADS, AI Code Mentor, KiroPiko и Bubble Tea Shop**.
+
+Для телефона в той же Wi-Fi-сети:
+
+```bash
+dart run tool/serve_portfolio.dart --phone
+```
+
+Команда покажет адрес вида `http://192.168.1.10:5173`, который нужно открыть на телефоне. Разреши доступ в брандмауэре Windows, если появится запрос.
+
+Исходники сайта находятся в [`website/dist`](website/dist). `flutter run -d edge` запускает отдельное Flutter-приложение, поэтому для веб-дизайна используй команды выше.
 
 ---
 
 ## 🧾 О себе
 
 **Имя:** Абдурасулов Давлатбек  
-**Роль:** Junior Programmer  
+**Роль:** Full-Stack Developer with Real Commercial Project Experience
+
 **Описание:**  
 Молодой и целеустремленный разработчик с уверенными знаниями в Dart и Python. Умею создавать мобильные приложения на Flutter, работать с API, интегрировать нейросети и криптотехнологии. Владею навыками проектирования UI/UX, создания анимаций и backend-разработки. Стремлюсь осваивать новые технологии и участвовать в инновационных проектах.
 
@@ -110,4 +131,4 @@
 
 1. Клонируй репозиторий:
    ```bash
-   git clone https://github.com/Davichik353/personal_portfolio.git 
+   git clone https://github.com/Davichik353/personal_portfolio.git

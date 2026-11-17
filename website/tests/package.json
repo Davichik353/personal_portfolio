@@ -1,0 +1,8 @@
+{
+  "name": "portfolio-website-tests",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.7.0" },
+  "scripts": { "test": "node --test i18n.test.mjs" },
+  "devDependencies": { "jsdom": "^26.1.0" }
+}
