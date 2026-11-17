@@ -555,6 +555,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-variation-settings: 'SOFT' 80
 .contact-section .eyebrow, .contact-section .section-index { color: var(--ink); }
 .contact-title { max-width: 980px; font-size: clamp(52px, 8vw, 104px); text-transform: lowercase; }
 .contact-item { border-color: var(--ink); }
+.contact-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .site-footer { padding-block: 36px; border: 0; background: var(--accent); color: var(--ink); }
 .dialog { border: 1.5px solid var(--line); border-radius: 20px; background: var(--paper); }
 
@@ -598,6 +599,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-variation-settings: 'SOFT' 80
   .education-grid { grid-template-columns: 1fr; }
   .certificate-card { grid-template-columns: 1fr; }
   .contact-section { width: 100%; padding: 58px 24px; border-radius: 40px 40px 0 0; }
+  .contact-layout { grid-template-columns: 1fr; }
 }
 
 /* Fit the full brand to its actual inset width. Playfair 800 is wider than 400. */
