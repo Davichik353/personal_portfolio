@@ -1,6 +1,24 @@
 import { setupI18n, t } from './i18n.js';
 import { en, uz } from './locales.js';
 
+// Some in-app mobile browsers keep a failed image response in cache or delay
+// native lazy images indefinitely. Refresh local image URLs once and request
+// them eagerly so project and certificate previews remain dependable.
+document.querySelectorAll('img').forEach((image) => {
+  image.loading = 'eager';
+  image.decoding = 'async';
+  const source = new URL(image.getAttribute('src'), document.baseURI);
+  if (source.origin !== window.location.origin) return;
+  source.searchParams.set('v', '20261121');
+  image.src = source.href;
+  image.addEventListener('error', () => {
+    if (image.dataset.retried === 'true') return;
+    image.dataset.retried = 'true';
+    source.searchParams.set('retry', '1');
+    image.src = source.href;
+  });
+});
+
 const i18n = setupI18n({ en, uz });
 const menu = document.querySelector('#nav-menu');
 const menuButton = document.querySelector('#menu-toggle');
