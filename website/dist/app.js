@@ -57,7 +57,10 @@ if ('IntersectionObserver' in window) {
       }
     }
   }, { rootMargin: '-15% 0px -55% 0px' });
-  document.querySelectorAll('main section[id]').forEach((section) => observer.observe(section));
+  for (const link of menu.querySelectorAll('a[href^="#"]')) {
+    const section = document.getElementById(link.hash.slice(1));
+    if (section) observer.observe(section);
+  }
 }
 
 let toastTimer;
