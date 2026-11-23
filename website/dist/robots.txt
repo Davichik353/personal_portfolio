@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://davichik353.github.io/personal_portfolio/sitemap.xml
+Sitemap: https://personal-portfolio.abddavlat3.workers.dev/sitemap.xml

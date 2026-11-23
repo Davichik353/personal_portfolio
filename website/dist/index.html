@@ -9,20 +9,23 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Давлатбек Абдурасулов — Full-Stack Developer">
   <meta property="og:description" content="Коммерческие веб-сервисы, мобильные приложения, API и AI-интеграции.">
-  <meta property="og:url" content="https://davichik353.github.io/personal_portfolio/">
-  <meta property="og:image" content="https://davichik353.github.io/personal_portfolio/assets/avatar.png">
-  <meta property="og:image:alt" content="Пиксельный аватар Давлатбека Абдурасулова">
+  <meta property="og:url" content="https://personal-portfolio.abddavlat3.workers.dev/">
+  <meta property="og:image" content="https://personal-portfolio.abddavlat3.workers.dev/assets/portfolio-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Давлатбек Абдурасулов, Full-Stack Developer. Проекты VIVID ADS и AI Code Mentor.">
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Давлатбек Абдурасулов — Full-Stack Developer">
   <meta name="twitter:description" content="Коммерческие веб-сервисы, мобильные приложения, API и AI-интеграции.">
-  <meta name="twitter:image" content="https://davichik353.github.io/personal_portfolio/assets/avatar.png">
+  <meta name="twitter:image" content="https://personal-portfolio.abddavlat3.workers.dev/assets/portfolio-share.jpg">
   <title data-i18n="pageTitle">Давлатбек Абдурасулов — Full-Stack Developer</title>
-  <link rel="canonical" href="https://davichik353.github.io/personal_portfolio/">
+  <link rel="canonical" href="https://personal-portfolio.abddavlat3.workers.dev/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css?v=project-case">
+  <link rel="preload" as="image" href="./assets/adnaut-scene.jpg">
+  <link rel="stylesheet" href="./styles.css?v=portfolio-share">
 
-  <script type="module" src="./app.js?v=project-case"></script>
+  <script type="module" src="./app.js?v=portfolio-share"></script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -105,7 +108,7 @@
           <div class="project-meta"><span class="notranslate" translate="no">PYTHON · FASTAPI · JAVASCRIPT</span><span class="project-stamp" data-i18n="fullStackProject">FULL-STACK</span></div>
           <h3 class="project-title notranslate" translate="no">AI Code Mentor</h3>
           <p class="project-description" data-i18n="mentorDescription">Платформа для практики программирования: запуск Python и JavaScript в браузере, AI-подсказки, группы, задания и проверка решений преподавателем.</p>
-          <div class="project-links"><a class="text-link" href="https://ai-code-mentor-frontend-iota.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="liveDemo">Открыть демо</span> ↗</a><a class="text-link notranslate" translate="no" href="https://github.com/Davichik353/ai-code-mentor-frontend" target="_blank" rel="noopener noreferrer">Frontend ↗</a><a class="text-link notranslate" translate="no" href="https://github.com/Davichik353/ai-code-mentor-backend" target="_blank" rel="noopener noreferrer">Backend ↗</a></div>
+          <div class="project-links"><a class="text-link" href="https://ai-code-mentor-frontend-iota.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="liveDemo">Открыть демо</span> ↗</a><a class="text-link" href="#mentor-case"><span data-i18n="caseOpen">Читать кейс</span> <span aria-hidden="true">↓</span></a><a class="text-link notranslate" translate="no" href="https://github.com/Davichik353/ai-code-mentor-frontend" target="_blank" rel="noopener noreferrer">Frontend ↗</a><a class="text-link notranslate" translate="no" href="https://github.com/Davichik353/ai-code-mentor-backend" target="_blank" rel="noopener noreferrer">Backend ↗</a></div>
         </article>
         <article class="project" id="project-kiro" tabindex="-1">
           <a href="https://github.com/Davichik353/KiroPiko" target="_blank" rel="noopener noreferrer" class="project-media kiro-media" aria-label="Открыть KiroPiko на GitHub" data-i18n-aria-label="kiroOpen">
@@ -154,6 +157,25 @@
       </div>
     </section>
 
+    <section class="section" id="mentor-case" aria-labelledby="mentor-case-title">
+      <h2 class="section-title notranslate" translate="no" id="mentor-case-title">AI Code Mentor</h2>
+      <div class="case-layout">
+        <div class="case-details">
+          <div><h3 data-i18n="mentorCaseNeedTitle">Задача</h3><p data-i18n="mentorCaseNeed">Собрать в одном месте практику программирования и работу с учебной группой. Ученик открывает задание, запускает своё решение и может запросить подсказку. Преподаватель проверяет работу в интерфейсе платформы.</p></div>
+          <div><h3 data-i18n="mentorCaseBuildTitle">Что я сделал</h3><p data-i18n="mentorCaseBuild">Связал редактор и запуск Python и JavaScript с AI-подсказками, заданиями и группами. Интерфейс на JavaScript отвечает за работу с кодом, а серверная часть использует Python и FastAPI.</p></div>
+          <div><h3 data-i18n="mentorCaseFlowTitle">Как это работает</h3><p data-i18n="mentorCaseFlow">Ученик пишет и запускает код в браузере, использует подсказку, если застрял, и передаёт решение на проверку. Преподаватель смотрит выполненные задания своей группы.</p></div>
+          <div class="case-links">
+            <a class="text-link" href="https://ai-code-mentor-frontend-iota.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="liveDemo">Открыть демо</span> ↗</a>
+            <a class="text-link notranslate" href="https://github.com/Davichik353/ai-code-mentor-frontend" translate="no">Frontend ↗</a>
+            <a class="text-link notranslate" href="https://github.com/Davichik353/ai-code-mentor-backend" translate="no">Backend ↗</a>
+          </div>
+        </div>
+        <figure class="case-demo">
+          <img src="./assets/ai-mentor-preview.webp" width="1440" height="900" loading="lazy" decoding="async" data-i18n-alt="mentorAlt" alt="Настоящий снимок главной страницы AI Code Mentor">
+        </figure>
+      </div>
+    </section>
+
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="section-heading"><h2 class="section-title" id="about-title" data-i18n="aboutTitle">От задачи до работающего продукта.</h2></div>
       <div class="about-layout"><div class="about-copy"><p data-i18n="aboutText">Я — Full-Stack Developer с реальным опытом коммерческих проектов. Работаю с интерфейсами, серверной логикой и мобильными приложениями. Помогаю превратить идею в понятный, работающий продукт.</p><p data-i18n="aboutInterests">Интересуюсь UI/UX, анимациями, нейросетями, блокчейном и backend-разработкой. Продолжаю учиться и осваивать новые технологии.</p></div>
@@ -194,6 +216,7 @@
     <section class="section contact-section" id="contacts" aria-labelledby="contact-title">
       <div class="section-heading"><p class="eyebrow" data-i18n="contactEyebrow">КОНТАКТЫ</p></div>
       <h2 class="contact-title" id="contact-title" data-i18n="contactTitle">Есть задача? Давайте обсудим.</h2>
+      <p class="contact-scope" data-i18n="contactScope">Могу помочь с коммерческим сайтом, мобильным приложением или интеграцией AI. Открыт к работе в команде.</p>
       <a class="button contact-primary" href="https://t.me/davichik" target="_blank" rel="noopener noreferrer"><span data-i18n="getInTouch">Написать в Telegram</span><span aria-hidden="true">↗</span></a>
       <div class="contact-layout">
         <div class="contact-item"><span class="contact-label" data-i18n="emailLabel">Написать</span><div class="contact-value"><a href="mailto:abddavlat2@gmail.com" class="notranslate" translate="no">abddavlat2@gmail.com ↗</a><button class="copy-button" data-copy="abddavlat2@gmail.com" aria-label="Скопировать email" data-i18n-aria-label="copyEmail"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg></button></div></div>

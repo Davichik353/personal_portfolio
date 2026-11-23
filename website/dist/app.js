@@ -1,22 +1,18 @@
 import { setupI18n, t } from './i18n.js';
 import { en, uz } from './locales.js';
 
-// Some in-app mobile browsers keep a failed image response in cache or delay
-// native lazy images indefinitely. Refresh local image URLs once and request
-// them eagerly so project and certificate previews remain dependable.
-document.querySelectorAll('img').forEach((image) => {
-  image.loading = 'eager';
+// Keep offscreen media lazy and recover a failed local image once.
+document.querySelectorAll('img[src]').forEach((image) => {
   image.decoding = 'async';
   const source = new URL(image.getAttribute('src'), document.baseURI);
   if (source.origin !== window.location.origin) return;
-  source.searchParams.set('v', '20261121');
-  image.src = source.href;
-  image.addEventListener('error', () => {
-    if (image.dataset.retried === 'true') return;
-    image.dataset.retried = 'true';
+  function retry() {
+    image.removeEventListener('error', retry);
     source.searchParams.set('retry', '1');
     image.src = source.href;
-  });
+  }
+  image.addEventListener('error', retry);
+  if (image.complete && !image.naturalWidth) retry();
 });
 
 const i18n = setupI18n({ en, uz });
@@ -113,12 +109,13 @@ if ('IntersectionObserver' in window && typeof Element.prototype.animate === 'fu
 const sceneVideo = document.querySelector('#scene-video');
 const scenePlay = document.querySelector('.scene-play');
 const mobileScene = window.matchMedia('(max-width: 600px)');
-let sceneVisible = true;
-let scenePaused = reducedMotion.matches;
+let sceneVisible = !('IntersectionObserver' in window);
+let scenePaused = reducedMotion.matches || mobileScene.matches;
+let sceneReady = false;
 let sceneSource;
 
 function updateScene() {
-  if (!sceneVisible || scenePaused || document.hidden) {
+  if (!sceneReady || !sceneVisible || scenePaused || document.hidden) {
     sceneVideo.pause();
     return;
   }
@@ -139,13 +136,16 @@ function updateSceneLabel() {
   scenePlay.textContent = t(scenePaused ? 'playAnimation' : 'pauseAnimation');
 }
 scenePlay.hidden = false;
+updateSceneLabel();
 scenePlay.addEventListener('click', () => {
+  sceneReady = true;
+  sceneVisible = true;
   scenePaused = !scenePaused;
   updateSceneLabel();
   updateScene();
 });
 reducedMotion.addEventListener('change', () => {
-  scenePaused = reducedMotion.matches;
+  scenePaused = reducedMotion.matches || mobileScene.matches;
   updateSceneLabel();
   updateScene();
 });
@@ -158,7 +158,14 @@ if ('IntersectionObserver' in window) {
     updateScene();
   }).observe(sceneVideo);
 }
-updateScene();
+function scheduleScene() {
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    sceneReady = true;
+    updateScene();
+  }));
+}
+if (document.readyState === 'complete') scheduleScene();
+else window.addEventListener('load', scheduleScene, { once: true });
 
 const projectGrid = document.querySelector('.project-grid');
 const projectControls = document.querySelector('.scene-project-controls');

@@ -1,5 +1,12 @@
 // Authored English and Uzbek versions. These never need a translation service.
 export const en = {
+  "mentorCaseNeedTitle": "Problem",
+  "mentorCaseNeed": "Bring coding practice and classwork into one workspace. Students open an assignment, run their solution, and can ask for a hint. Teachers review work within the platform.",
+  "mentorCaseBuildTitle": "What I built",
+  "mentorCaseBuild": "I connected the editor and Python and JavaScript execution to AI hints, assignments, and groups. JavaScript powers the interface, while the backend uses Python and FastAPI.",
+  "mentorCaseFlowTitle": "How it works",
+  "mentorCaseFlow": "A student writes and runs code in the browser, asks for a hint if stuck, and submits a solution for review. The teacher reviews completed assignments for their group.",
+  "contactScope": "I can help with commercial websites, mobile apps, or AI integrations. I’m open to working with a team.",
   "cvDownload": "Download CV",
   "quickProjects": "Jump to a project",
   "caseOpen": "Read the case study",
@@ -140,6 +147,13 @@ export const en = {
 };
 
 export const uz = {
+  "mentorCaseNeedTitle": "Vazifa",
+  "mentorCaseNeed": "Dasturlash amaliyoti va guruh ishini bir joyga jamlash. O‘quvchi topshiriqni ochadi, yechimini ishga tushiradi va yordam so‘rashi mumkin. O‘qituvchi ishni platformada tekshiradi.",
+  "mentorCaseBuildTitle": "Men nima qildim",
+  "mentorCaseBuild": "Muharrir va Python hamda JavaScript kodini ishga tushirishni AI maslahatlari, topshiriqlar va guruhlar bilan bog‘ladim. Interfeys JavaScript, server qismi esa Python va FastAPI asosida ishlaydi.",
+  "mentorCaseFlowTitle": "Qanday ishlaydi",
+  "mentorCaseFlow": "O‘quvchi kodni brauzerda yozadi va ishga tushiradi, kerak bo‘lsa maslahat oladi va yechimni tekshiruvga yuboradi. O‘qituvchi o‘z guruhining bajarilgan topshiriqlarini ko‘radi.",
+  "contactScope": "Tijoriy sayt, mobil ilova yoki AI integratsiyasi bo‘yicha yordam bera olaman. Jamoada ishlashga tayyorman.",
   "cvDownload": "CV yuklab olish",
   "quickProjects": "Loyihaga tez o‘tish",
   "caseOpen": "Loyiha tahlilini o‘qish",

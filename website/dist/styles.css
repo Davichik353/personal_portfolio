@@ -732,3 +732,7 @@ li + li { margin-top: 6px; }
 @media (max-width: 760px) {
   .case-layout { grid-template-columns: 1fr; }
 }
+
+.case-demo img { width: 100%; height: auto; border-radius: 8px; }
+.case-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.contact-scope { max-width: 58ch; margin-block: -12px 20px; color: var(--muted); }
