@@ -20,11 +20,12 @@
   <title data-i18n="pageTitle">Давлатбек Абдурасулов — Full-Stack Developer</title>
   <link rel="canonical" href="https://davichik353.github.io/personal_portfolio/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css?v=adnaut">
+  <link rel="stylesheet" href="./styles.css?v=motion">
 
-  <script type="module" src="./app.js?v=adnaut"></script>
+  <script type="module" src="./app.js?v=motion"></script>
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main" data-i18n="skip">Перейти к содержимому</a>
   <header class="site-header">
     <div class="header-inner container">
@@ -63,7 +64,7 @@
         </div>
       </div>
       <figure class="hero-art">
-        <div class="avatar-stage"><img src="./assets/avatar.png" width="1184" height="1184" alt="Жёлтый пиксельный аватар Davichik353" data-i18n-alt="avatarAlt"></div>
+        <div class="avatar-stage"><div class="avatar-orbit" aria-hidden="true"><i></i><i></i><i></i></div><img src="./assets/avatar.png" width="1184" height="1184" alt="Жёлтый пиксельный аватар Davichik353" data-i18n-alt="avatarAlt"></div>
         <figcaption class="avatar-caption"><span class="notranslate" translate="no">&lt; hello_world /&gt;</span><span data-i18n="avatarCaption">Немного пикселей. Много любопытства.</span></figcaption>
       </figure>
       <div class="hero-footnote"><span data-i18n="heroFootnote">Frontend · Backend · Mobile</span><a href="https://github.com/Davichik353" target="_blank" rel="noopener noreferrer" class="text-link notranslate" translate="no">GitHub ↗</a><a href="#projects" class="scroll-link" data-i18n="scrollDown">Листайте вниз ↓</a></div>

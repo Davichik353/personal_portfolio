@@ -63,6 +63,74 @@ if ('IntersectionObserver' in window) {
   }
 }
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const progress = document.querySelector('.scroll-progress');
+let progressFrame = 0;
+function updateProgress() {
+  if (progressFrame) return;
+  progressFrame = requestAnimationFrame(() => {
+    progressFrame = 0;
+    const { scrollHeight, clientHeight, scrollTop } = document.documentElement;
+    const distance = scrollHeight - clientHeight;
+    progress.style.setProperty('--scroll-progress', distance > 0 ? scrollTop / distance : 0);
+  });
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+window.addEventListener('resize', updateProgress);
+document.addEventListener('portfolio:languagechange', updateProgress);
+if ('ResizeObserver' in window) new ResizeObserver(updateProgress).observe(document.body);
+updateProgress();
+
+if ('IntersectionObserver' in window && typeof Element.prototype.animate === 'function') {
+  const reveals = new Set();
+  const revealObserver = new IntersectionObserver((entries) => {
+    for (const { target, isIntersecting } of entries) {
+      if (!isIntersecting) continue;
+      revealObserver.unobserve(target);
+      if (reducedMotion.matches || target.matches(':focus-within')) continue;
+      const animation = target.animate([
+        { opacity: .45, transform: 'translateY(18px)' },
+        { opacity: 1, transform: 'translateY(0)' },
+      ], { duration: 540, easing: 'cubic-bezier(.2,.75,.25,1)' });
+      reveals.add(animation);
+      const cancelReveal = () => animation.cancel();
+      target.addEventListener('focusin', cancelReveal, { once: true });
+      const cleanUp = () => {
+        reveals.delete(animation);
+        target.removeEventListener('focusin', cancelReveal);
+      };
+      animation.finished.then(cleanUp, cleanUp);
+    }
+  }, { threshold: .08 });
+  document.querySelectorAll('.section-heading, .project, .timeline-item, .education-item, .certificate-card, .contact-item')
+    .forEach((element) => revealObserver.observe(element));
+  reducedMotion.addEventListener('change', () => {
+    if (!reducedMotion.matches) return;
+    for (const animation of reveals) animation.cancel();
+  });
+}
+
+const avatarStage = document.querySelector('.avatar-stage');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+function resetAvatar() {
+  for (const property of ['--tilt-x', '--tilt-y', '--avatar-x', '--avatar-y']) {
+    avatarStage.style.removeProperty(property);
+  }
+}
+avatarStage.addEventListener('pointermove', (event) => {
+  if (reducedMotion.matches || !finePointer.matches || event.pointerType === 'touch') return;
+  const bounds = avatarStage.getBoundingClientRect();
+  const x = (event.clientX - bounds.left) / bounds.width - .5;
+  const y = (event.clientY - bounds.top) / bounds.height - .5;
+  avatarStage.style.setProperty('--tilt-x', `${-y * 24}deg`);
+  avatarStage.style.setProperty('--tilt-y', `${x * 24}deg`);
+  avatarStage.style.setProperty('--avatar-x', `${x * 26}px`);
+  avatarStage.style.setProperty('--avatar-y', `${y * 26}px`);
+});
+avatarStage.addEventListener('pointerleave', resetAvatar);
+reducedMotion.addEventListener('change', resetAvatar);
+finePointer.addEventListener('change', resetAvatar);
+
 let toastTimer;
 function notify(message) {
   const toast = document.querySelector('#toast');
