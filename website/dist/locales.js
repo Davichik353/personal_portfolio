@@ -1,5 +1,16 @@
 // Authored English and Uzbek versions. These never need a translation service.
 export const en = {
+  "cvDownload": "Download CV",
+  "quickProjects": "Jump to a project",
+  "caseOpen": "Read the case study",
+  "caseLabel": "CLIENT PROJECT",
+  "caseNeedTitle": "Business need",
+  "caseNeed": "Buyers needed to browse fixtures and furniture, assess dimensions and finishes, and share a configuration for a quote. The catalog and configurator brought these steps together.",
+  "caseRoleTitle": "My role",
+  "caseRole": "I built the catalog, integrated in-browser STL viewing, and connected the product settings to the inquiry form. Buyers can change material, thickness, color, and dimensions and immediately see a preview.",
+  "caseFlowTitle": "From the 3D model to Telegram",
+  "caseFlow": "For ROLL FLEX, open the STL model, choose the Walnut finish, and select Discuss the project. The item and its settings carry over to the inquiry form. The site previews the request before submission, and Telegram is used to discuss pricing and timelines.",
+  "caseDemo": "12 seconds · Screens from the live site: STL model, finish, and inquiry form.",
   pauseAnimation: "Pause animation",
   playAnimation: "Play animation",
   previousProject: "Previous project",
@@ -129,6 +140,17 @@ export const en = {
 };
 
 export const uz = {
+  "cvDownload": "CV yuklab olish",
+  "quickProjects": "Loyihaga tez o‘tish",
+  "caseOpen": "Loyiha tahlilini o‘qish",
+  "caseLabel": "TIJORIY LOYIHA",
+  "caseNeedTitle": "Biznes vazifasi",
+  "caseNeed": "Xaridorlar stend va mebellarni ko‘rib, o‘lcham va qoplamani tanlashi, so‘ng narx hisoblash uchun variantini yuborishi kerak edi. Katalog va konfigurator bu bosqichlarni birlashtirdi.",
+  "caseRoleTitle": "Mening rolim",
+  "caseRole": "Men katalogni ishlab chiqdim, STL modellarini brauzerda ko‘rishni uladim va mahsulot sozlamalarini so‘rov shakliga bog‘ladim. Material, qalinlik, rang va o‘lcham natijasini darhol ko‘rish mumkin.",
+  "caseFlowTitle": "3D modeldan Telegramgacha",
+  "caseFlow": "ROLL FLEX misolida STL modelini oching, yong‘oq rangini tanlang va loyihani muhokama qilish tugmasini bosing. Mahsulot va parametrlari so‘rov shakliga o‘tadi. Yuborishdan oldin matn ko‘rinadi, narx va muddat Telegramda muhokama qilinadi.",
+  "caseDemo": "12 soniya · Jonli saytdan kadrlar: STL modeli, qoplama va so‘rov shakli.",
   pauseAnimation: "Animatsiyani to‘xtatish",
   playAnimation: "Animatsiyani ijro etish",
   previousProject: "Oldingi loyiha",

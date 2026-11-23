@@ -162,21 +162,52 @@ updateScene();
 
 const projectGrid = document.querySelector('.project-grid');
 const projectControls = document.querySelector('.scene-project-controls');
+const projectJumps = document.querySelector('.project-jumps');
+const projectLinks = [...projectJumps.querySelectorAll('a')];
+const projectCards = projectLinks.map((link) => document.getElementById(link.hash.slice(1)));
+
+function projectOffset(card) {
+  const edge = document.documentElement.dir === 'rtl' ? 'right' : 'left';
+  return card.getBoundingClientRect()[edge] - projectGrid.getBoundingClientRect()[edge];
+}
+
+function openProject(index) {
+  projectGrid.scrollBy({
+    left: projectOffset(projectCards[index]),
+    behavior: reducedMotion.matches ? 'instant' : 'smooth',
+  });
+}
+
+function visibleProject() {
+  return projectCards.reduce((nearest, card, index) =>
+    Math.abs(projectOffset(card)) < Math.abs(projectOffset(projectCards[nearest])) ? index : nearest, 0);
+}
+
+function updateProjectLinks() {
+  const active = visibleProject();
+  projectLinks.forEach((link, index) => {
+    if (index === active) link.setAttribute('aria-current', 'true');
+    else link.removeAttribute('aria-current');
+  });
+}
+
 projectControls.hidden = false;
 projectControls.addEventListener('click', (event) => {
   const button = event.target.closest('[data-project-step]');
   if (!button) return;
-  const cards = [...projectGrid.querySelectorAll('.project')];
-  const rtl = document.documentElement.dir === 'rtl';
-  const edge = (rect) => rtl ? rect.right : rect.left;
-  const start = edge(projectGrid.getBoundingClientRect());
-  const current = cards.reduce((nearest, card, index) =>
-    Math.abs(edge(card.getBoundingClientRect()) - start) <
-    Math.abs(edge(cards[nearest].getBoundingClientRect()) - start) ? index : nearest, 0);
-  const next = (current + Number(button.dataset.projectStep) + cards.length) % cards.length;
-  const distance = edge(cards[next].getBoundingClientRect()) - start;
-  projectGrid.scrollBy({ left: distance, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  const next = (visibleProject() + Number(button.dataset.projectStep) + projectCards.length) % projectCards.length;
+  openProject(next);
 });
+projectJumps.addEventListener('click', (event) => {
+  const link = event.target.closest('a');
+  if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  openProject(projectLinks.indexOf(link));
+});
+projectGrid.addEventListener('scroll', updateProjectLinks, { passive: true });
+window.addEventListener('resize', updateProjectLinks);
+document.addEventListener('portfolio:languagechange', updateProjectLinks);
+updateProjectLinks();
 
 let toastTimer;
 function notify(message) {
