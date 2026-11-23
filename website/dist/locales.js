@@ -1,5 +1,9 @@
 // Authored English and Uzbek versions. These never need a translation service.
 export const en = {
+  pauseAnimation: "Pause animation",
+  playAnimation: "Play animation",
+  previousProject: "Previous project",
+  nextProject: "Next project",
   "pageTitle": "Davlatbek Abdurasulov — Full-Stack Developer",
   "metaDescription": "Davlatbek Abdurasulov — Full-Stack Developer. Web applications, mobile development, Python and commercial project experience. Let’s discuss your project.",
   "homeAria": "Davichik353 — home",
@@ -125,6 +129,10 @@ export const en = {
 };
 
 export const uz = {
+  pauseAnimation: "Animatsiyani to‘xtatish",
+  playAnimation: "Animatsiyani ijro etish",
+  previousProject: "Oldingi loyiha",
+  nextProject: "Keyingi loyiha",
   "pageTitle": "Davlatbek Abdurasulov — Full-Stack dasturchi",
   "metaDescription": "Davlatbek Abdurasulov — Full-Stack dasturchi. Veb-ilovalar, mobil dasturlash, Python va tijoriy loyihalar tajribasi. Loyihangizni muhokama qilaylik.",
   "homeAria": "Davichik353 — bosh sahifa",

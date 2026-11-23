@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" data-i18n-content="metaDescription" content="Давлатбек Абдурасулов — Full-Stack Developer. Веб-приложения, мобильная разработка, Python и коммерческий опыт. Обсудим ваш проект.">
-  <meta name="theme-color" content="#191810">
+  <meta name="theme-color" content="#262626">
   <meta name="color-scheme" content="dark">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Давлатбек Абдурасулов — Full-Stack Developer">
@@ -20,13 +20,17 @@
   <title data-i18n="pageTitle">Давлатбек Абдурасулов — Full-Stack Developer</title>
   <link rel="canonical" href="https://davichik353.github.io/personal_portfolio/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css?v=motion">
+  <link rel="stylesheet" href="./styles.css?v=adnaut-scene">
 
-  <script type="module" src="./app.js?v=motion"></script>
+  <script type="module" src="./app.js?v=adnaut-scene"></script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main" data-i18n="skip">Перейти к содержимому</a>
+  <div class="scene-topbar">
+    <a class="scene-wordmark notranslate" translate="no" href="#main">davichik353<span>.</span></a>
+    <a class="scene-contact button" href="#contacts"><span data-i18n="navContact">Контакты</span><span aria-hidden="true">→</span></a>
+  </div>
   <header class="site-header">
     <div class="header-inner container">
       <a class="brand notranslate" translate="no" href="#main" aria-label="Davichik353 — на главную" data-i18n-aria-label="homeAria">
@@ -53,25 +57,34 @@
   </header>
 
   <main id="main" class="container">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow notranslate" translate="no">FULL-STACK DEVELOPER</p>
+    <section class="hero scene-hero" aria-labelledby="hero-title">
+      <div class="scene-intro">
         <h1 class="hero-title" id="hero-title"><span data-i18n="firstName">Давлатбек</span><br><span data-i18n="lastName">Абдурасулов.</span></h1>
         <p class="hero-lead" data-i18n="heroLead">Создаю коммерческие веб-сервисы и мобильные приложения. Проектирую интерфейсы, серверную логику, API и интеграции — от анализа задачи и прототипа до запуска и развития продукта.</p>
-        <div class="hero-actions">
-          <a class="button" href="#projects"><span data-i18n="seeProjects">Посмотреть проекты</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg></a>
-          <a class="button button-secondary" href="https://t.me/davichik" target="_blank" rel="noopener noreferrer"><span data-i18n="getInTouch">Написать в Telegram</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 18 18 6M8 6h10v10"/></svg></a>
-        </div>
       </div>
-      <figure class="hero-art">
-        <div class="avatar-stage"><div class="avatar-orbit" aria-hidden="true"><i></i><i></i><i></i></div><img src="./assets/avatar.png" width="1184" height="1184" alt="Жёлтый пиксельный аватар Davichik353" data-i18n-alt="avatarAlt"></div>
-        <figcaption class="avatar-caption"><span class="notranslate" translate="no">&lt; hello_world /&gt;</span><span data-i18n="avatarCaption">Немного пикселей. Много любопытства.</span></figcaption>
+      <figure class="scene-media">
+        <a class="scene-watch" href="#projects" data-i18n="seeProjects">Посмотреть проекты</a>
+        <video id="scene-video" poster="./assets/adnaut-scene.jpg" muted loop playsinline preload="none" aria-hidden="true" data-video-desktop="https://cdn.jsdelivr.net/gh/Everything-Design/everythingflow@main/Adnaut%20Videos/Section_hero_large.mp4" data-video-mobile="https://cdn.jsdelivr.net/gh/Everything-Design/everythingflow@main/Adnaut%20Videos/Section_hero_mobile.mp4"></video>
+        <button class="scene-play" type="button" hidden data-i18n="pauseAnimation">Приостановить анимацию</button>
+        <span hidden data-i18n="playAnimation">Воспроизвести анимацию</span>
       </figure>
-      <div class="hero-footnote"><span data-i18n="heroFootnote">Frontend · Backend · Mobile</span><a href="https://github.com/Davichik353" target="_blank" rel="noopener noreferrer" class="text-link notranslate" translate="no">GitHub ↗</a><a href="#projects" class="scroll-link" data-i18n="scrollDown">Листайте вниз ↓</a></div>
+    </section>
+
+    <section class="scene-panels" aria-labelledby="scene-panels-title">
+      <div class="scene-manifesto">
+        <p class="notranslate" translate="no">FULL-STACK DEVELOPER</p>
+        <h2 id="scene-panels-title">Frontend.<br>Backend.<br><span>Mobile.</span></h2>
+      </div>
+      <a class="scene-yellow scene-chart" href="#projects"><span data-i18n="projectsTitle">Избранные проекты.</span></a>
+      <a class="scene-yellow scene-about" href="#about"><span data-i18n="heroFootnote">Frontend · Backend · Mobile</span><span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading"><h2 class="section-title" id="projects-title" data-i18n="projectsTitle">Избранные проекты.</h2><p class="section-intro" data-i18n="projectsIntro">Веб-сервисы, мобильные приложения и AI-инструменты. Четыре проекта из моей практики.</p></div>
+      <div class="scene-project-controls" hidden>
+        <button type="button" data-project-step="-1" data-i18n-aria-label="previousProject" aria-label="Предыдущий проект">←</button>
+        <button type="button" data-project-step="1" data-i18n-aria-label="nextProject" aria-label="Следующий проект">→</button>
+      </div>
       <div class="project-grid">
         <article class="project">
           <a href="https://vivid-ads.com/" target="_blank" rel="noopener noreferrer" class="project-media vivid-media" aria-label="Открыть VIVID ADS" data-i18n-aria-label="vividOpen">

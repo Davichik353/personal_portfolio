@@ -102,7 +102,7 @@ if ('IntersectionObserver' in window && typeof Element.prototype.animate === 'fu
       animation.finished.then(cleanUp, cleanUp);
     }
   }, { threshold: .08 });
-  document.querySelectorAll('.section-heading, .project, .timeline-item, .education-item, .certificate-card, .contact-item')
+  document.querySelectorAll('.scene-panels > *, .section-heading, .project, .timeline-item, .education-item, .certificate-card, .contact-item')
     .forEach((element) => revealObserver.observe(element));
   reducedMotion.addEventListener('change', () => {
     if (!reducedMotion.matches) return;
@@ -110,26 +110,73 @@ if ('IntersectionObserver' in window && typeof Element.prototype.animate === 'fu
   });
 }
 
-const avatarStage = document.querySelector('.avatar-stage');
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-function resetAvatar() {
-  for (const property of ['--tilt-x', '--tilt-y', '--avatar-x', '--avatar-y']) {
-    avatarStage.style.removeProperty(property);
+const sceneVideo = document.querySelector('#scene-video');
+const scenePlay = document.querySelector('.scene-play');
+const mobileScene = window.matchMedia('(max-width: 600px)');
+let sceneVisible = true;
+let scenePaused = reducedMotion.matches;
+let sceneSource;
+
+function updateScene() {
+  if (!sceneVisible || scenePaused || document.hidden) {
+    sceneVideo.pause();
+    return;
   }
+  const source = mobileScene.matches ? sceneVideo.dataset.videoMobile : sceneVideo.dataset.videoDesktop;
+  if (source !== sceneSource) {
+    sceneSource = source;
+    sceneVideo.src = source;
+  }
+  sceneVideo.play().catch((error) => {
+    if (error.name !== 'AbortError' && sceneVideo.paused && sceneVisible && !document.hidden) {
+      scenePaused = true;
+      updateSceneLabel();
+    }
+  });
 }
-avatarStage.addEventListener('pointermove', (event) => {
-  if (reducedMotion.matches || !finePointer.matches || event.pointerType === 'touch') return;
-  const bounds = avatarStage.getBoundingClientRect();
-  const x = (event.clientX - bounds.left) / bounds.width - .5;
-  const y = (event.clientY - bounds.top) / bounds.height - .5;
-  avatarStage.style.setProperty('--tilt-x', `${-y * 24}deg`);
-  avatarStage.style.setProperty('--tilt-y', `${x * 24}deg`);
-  avatarStage.style.setProperty('--avatar-x', `${x * 26}px`);
-  avatarStage.style.setProperty('--avatar-y', `${y * 26}px`);
+
+function updateSceneLabel() {
+  scenePlay.textContent = t(scenePaused ? 'playAnimation' : 'pauseAnimation');
+}
+scenePlay.hidden = false;
+scenePlay.addEventListener('click', () => {
+  scenePaused = !scenePaused;
+  updateSceneLabel();
+  updateScene();
 });
-avatarStage.addEventListener('pointerleave', resetAvatar);
-reducedMotion.addEventListener('change', resetAvatar);
-finePointer.addEventListener('change', resetAvatar);
+reducedMotion.addEventListener('change', () => {
+  scenePaused = reducedMotion.matches;
+  updateSceneLabel();
+  updateScene();
+});
+mobileScene.addEventListener('change', updateScene);
+document.addEventListener('visibilitychange', updateScene);
+document.addEventListener('portfolio:languagechange', updateSceneLabel);
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(([entry]) => {
+    sceneVisible = entry.isIntersecting;
+    updateScene();
+  }).observe(sceneVideo);
+}
+updateScene();
+
+const projectGrid = document.querySelector('.project-grid');
+const projectControls = document.querySelector('.scene-project-controls');
+projectControls.hidden = false;
+projectControls.addEventListener('click', (event) => {
+  const button = event.target.closest('[data-project-step]');
+  if (!button) return;
+  const cards = [...projectGrid.querySelectorAll('.project')];
+  const rtl = document.documentElement.dir === 'rtl';
+  const edge = (rect) => rtl ? rect.right : rect.left;
+  const start = edge(projectGrid.getBoundingClientRect());
+  const current = cards.reduce((nearest, card, index) =>
+    Math.abs(edge(card.getBoundingClientRect()) - start) <
+    Math.abs(edge(cards[nearest].getBoundingClientRect()) - start) ? index : nearest, 0);
+  const next = (current + Number(button.dataset.projectStep) + cards.length) % cards.length;
+  const distance = edge(cards[next].getBoundingClientRect()) - start;
+  projectGrid.scrollBy({ left: distance, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+});
 
 let toastTimer;
 function notify(message) {
