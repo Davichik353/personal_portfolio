@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" data-i18n-content="metaDescription" content="Давлатбек Абдурасулов — Full-Stack Developer. Веб-приложения, мобильная разработка, Python и коммерческий опыт. Обсудим ваш проект.">
   <meta name="theme-color" content="#262626">
   <meta name="color-scheme" content="dark">
@@ -23,9 +23,9 @@
   <link rel="canonical" href="https://personal-portfolio.abddavlat3.workers.dev/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="preload" as="image" href="./assets/adnaut-scene.jpg">
-  <link rel="stylesheet" href="./styles.css?v=portfolio-share">
+  <link rel="stylesheet" href="./styles.css?v=mobile-prologue">
 
-  <script type="module" src="./app.js?v=portfolio-share"></script>
+  <script type="module" src="./app.js?v=mobile-prologue"></script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -70,9 +70,11 @@
           <a class="scene-watch" href="#projects" data-i18n="seeProjects">Посмотреть проекты</a>
           <a class="scene-watch" href="./assets/davlatbek-abdurasulov-cv.pdf" download data-i18n="cvDownload">Скачать CV</a>
         </div>
-        <video id="scene-video" poster="./assets/adnaut-scene.jpg" muted loop playsinline preload="none" aria-hidden="true" data-video-desktop="https://cdn.jsdelivr.net/gh/Everything-Design/everythingflow@main/Adnaut%20Videos/Section_hero_large.mp4" data-video-mobile="https://cdn.jsdelivr.net/gh/Everything-Design/everythingflow@main/Adnaut%20Videos/Section_hero_mobile.mp4"></video>
-        <button class="scene-play" type="button" hidden data-i18n="pauseAnimation">Приостановить анимацию</button>
-        <span hidden data-i18n="playAnimation">Воспроизвести анимацию</span>
+        <div class="scene-visual">
+          <video id="scene-video" poster="./assets/adnaut-scene.jpg" muted loop playsinline preload="none" aria-hidden="true" data-video-desktop="https://cdn.jsdelivr.net/gh/Everything-Design/everythingflow@main/Adnaut%20Videos/Section_hero_large.mp4" data-video-mobile="./assets/adnaut-prologue-mobile.mp4"></video>
+          <button class="scene-play" type="button" hidden data-i18n="pauseAnimation">Приостановить анимацию</button>
+          <span hidden data-i18n="playAnimation">Воспроизвести анимацию</span>
+        </div>
       </figure>
     </section>
 

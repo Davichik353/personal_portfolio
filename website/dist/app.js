@@ -110,7 +110,9 @@ const sceneVideo = document.querySelector('#scene-video');
 const scenePlay = document.querySelector('.scene-play');
 const mobileScene = window.matchMedia('(max-width: 600px)');
 let sceneVisible = !('IntersectionObserver' in window);
-let scenePaused = reducedMotion.matches || mobileScene.matches;
+const connection = navigator.connection;
+const saveData = () => Boolean(connection?.saveData);
+let scenePaused = reducedMotion.matches || saveData();
 let sceneReady = false;
 let sceneSource;
 
@@ -145,7 +147,13 @@ scenePlay.addEventListener('click', () => {
   updateScene();
 });
 reducedMotion.addEventListener('change', () => {
-  scenePaused = reducedMotion.matches || mobileScene.matches;
+  scenePaused = reducedMotion.matches || saveData();
+  updateSceneLabel();
+  updateScene();
+});
+connection?.addEventListener('change', () => {
+  if (!saveData()) return;
+  scenePaused = true;
   updateSceneLabel();
   updateScene();
 });
@@ -210,6 +218,10 @@ projectJumps.addEventListener('click', (event) => {
   if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
   event.preventDefault();
   openProject(projectLinks.indexOf(link));
+  const bounds = projectGrid.getBoundingClientRect();
+  if (bounds.top < 0 && mobileScene.matches) {
+    projectGrid.scrollIntoView({ block: 'start', behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+  }
 });
 projectGrid.addEventListener('scroll', updateProjectLinks, { passive: true });
 window.addEventListener('resize', updateProjectLinks);
