@@ -17,8 +17,10 @@ export default {
     if (!languages.has(payload?.language) || !placements.has(payload?.placement)) {
       return new Response(null, { status: 400 });
     }
-    env.PORTFOLIO_ANALYTICS.writeDataPoint({
-      blobs: [payload.language, payload.placement],
+    console.log({
+      event: 'portfolio_telegram_click',
+      language: payload.language,
+      placement: payload.placement,
     });
     return new Response(null, { status: 204 });
   },

@@ -36,15 +36,6 @@ Tests cover language switching, translation completeness, caching, failures, rac
 ## Страницы услуг и заявки
 
 - Русская страница находится по адресу `/ru/uslugi/`, узбекская — `/uz/xizmatlar/`. Обе входят в sitemap.
-- Google Search Console показывает поисковые показы и клики по каждой странице. Нажатия на кнопки Telegram со страниц услуг отдельно записываются в Workers Analytics Engine (язык и положение кнопки).
+- Google Search Console показывает поисковые показы и клики по каждой странице. Нажатия на кнопки Telegram со страниц услуг отдельно записываются в Workers Logs (язык и положение кнопки).
 - В Telegram ищите отправленные сообщения по фразам «со страницы услуг портфолио» или «Portfolio xizmatlar sahifasidan». Считайте отдельные диалоги с заявками за тот же период. Переход в Telegram может не закончиться отправкой сообщения, а посетитель может изменить черновик.
-- Запрос SQL API Cloudflare для числа нажатий по языкам и расположению кнопки за последние 30 дней:
-
-```sql
-SELECT blob1 AS language, blob2 AS placement, SUM(_sample_interval) AS clicks
-FROM portfolio_telegram_clicks
-WHERE timestamp >= NOW() - INTERVAL '30' DAY
-GROUP BY blob1, blob2
-ORDER BY clicks DESC
-FORMAT JSON
-```
+- В Cloudflare откройте Worker `personal-portfolio` → Observability → Logs и отфильтруйте события по `portfolio_telegram_click`. Выберите период в пределах срока хранения журналов и посмотрите значения полей `language` и `placement`.
