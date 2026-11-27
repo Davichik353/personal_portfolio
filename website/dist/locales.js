@@ -1,5 +1,17 @@
 // Authored English and Uzbek versions. These never need a translation service.
 export const en = {
+  workExperienceTitle: "Work experience",
+  sysadminDates: "June 2026 – Present",
+  sysadminTitle: "System Administrator",
+  sysadminSupport: "Provide IT support across 9 branches serving more than 200 employees. Set up Windows computers, printers, peripherals, Wi-Fi and local networks. Troubleshoot issues and install software.",
+  sysadminAccounts: "Work with Windows Server, Active Directory and Microsoft 365. Create user accounts, manage access and perform backups.",
+  sysadminOperations: "Support administrators and operators, review their work and help them use the LMS. Compile monthly student statistics.",
+  smmDates: "August 2025 – September 2026 (1 year and 2 months)",
+  smmTitle: "Social Media Manager",
+  smmCompany: "Agro Export Alliance LLC",
+  smmContent: "Wrote and published posts for social media and blogs, and promoted social content.",
+  smmStrategy: "Researched the market, target audience and competitors. Developed the product promotion strategy and assigned tasks across the team.",
+  smmCommunity: "Engaged with the audience, answered questions and moderated comments.",
   navServices: "Services",
   "mentorCaseNeedTitle": "Problem",
   "mentorCaseNeed": "Bring coding practice and classwork into one workspace. Students open an assignment, run their solution, and can ask for a hint. Teachers review work within the platform.",
@@ -148,6 +160,18 @@ export const en = {
 };
 
 export const uz = {
+  workExperienceTitle: "Ish tajribasi",
+  sysadminDates: "2026-yil iyun — hozirgacha",
+  sysadminTitle: "Tizim administratori",
+  sysadminSupport: "9 ta filial va 200 dan ortiq xodimga IT yordami ko‘rsataman. Windows kompyuterlari, printerlar, tashqi qurilmalar, Wi-Fi va mahalliy tarmoqlarni sozlayman. Nosozliklarni aniqlayman va dasturlarni o‘rnataman.",
+  sysadminAccounts: "Windows Server, Active Directory va Microsoft 365 bilan ishlayman. Hisoblar yarataman, kirish huquqlarini boshqaraman va zaxira nusxalarini olaman.",
+  sysadminOperations: "Administrator va operatorlarga yordam beraman, ularning ishini tekshiraman va LMS bilan ishlashda ko‘maklashaman. O‘quvchilar bo‘yicha oylik statistika tayyorlayman.",
+  smmDates: "2025-yil avgust — 2026-yil sentabr (1 yil 2 oy)",
+  smmTitle: "SMM-menejer",
+  smmCompany: "«Agro eksport Alyans» MChJ",
+  smmContent: "Ijtimoiy tarmoqlar va bloglar uchun postlar yozdim va e’lon qildim, kontentni targ‘ib qildim.",
+  smmStrategy: "Bozor, maqsadli auditoriya va raqobatchilarni o‘rgandim. Mahsulotni targ‘ib qilish strategiyasini ishlab chiqdim va jamoada vazifalarni taqsimladim.",
+  smmCommunity: "Auditoriya bilan muloqot qildim, savollarga javob berdim va izohlarni moderatsiya qildim.",
   navServices: "Xizmatlar",
   "mentorCaseNeedTitle": "Vazifa",
   "mentorCaseNeed": "Dasturlash amaliyoti va guruh ishini bir joyga jamlash. O‘quvchi topshiriqni ochadi, yechimini ishga tushiradi va yordam so‘rashi mumkin. O‘qituvchi ishni platformada tekshiradi.",
