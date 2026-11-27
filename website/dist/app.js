@@ -18,6 +18,13 @@ document.querySelectorAll('img[src]').forEach((image) => {
 const i18n = setupI18n({ en, uz });
 const menu = document.querySelector('#nav-menu');
 const menuButton = document.querySelector('#menu-toggle');
+const servicesLinks = document.querySelectorAll('[data-services-link]');
+function updateServicesLink() {
+  const path = document.documentElement.lang === 'uz' ? '/uz/xizmatlar/' : '/ru/uslugi/';
+  for (const link of servicesLinks) link.href = path;
+}
+document.addEventListener('portfolio:languagechange', updateServicesLink);
+updateServicesLink();
 function closeMenu() {
   menu.dataset.open = 'false';
   menuButton.setAttribute('aria-expanded', 'false');

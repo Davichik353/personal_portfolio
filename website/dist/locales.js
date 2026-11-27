@@ -1,5 +1,6 @@
 // Authored English and Uzbek versions. These never need a translation service.
 export const en = {
+  navServices: "Services",
   "mentorCaseNeedTitle": "Problem",
   "mentorCaseNeed": "Bring coding practice and classwork into one workspace. Students open an assignment, run their solution, and can ask for a hint. Teachers review work within the platform.",
   "mentorCaseBuildTitle": "What I built",
@@ -147,6 +148,7 @@ export const en = {
 };
 
 export const uz = {
+  navServices: "Xizmatlar",
   "mentorCaseNeedTitle": "Vazifa",
   "mentorCaseNeed": "Dasturlash amaliyoti va guruh ishini bir joyga jamlash. O‘quvchi topshiriqni ochadi, yechimini ishga tushiradi va yordam so‘rashi mumkin. O‘qituvchi ishni platformada tekshiradi.",
   "mentorCaseBuildTitle": "Men nima qildim",

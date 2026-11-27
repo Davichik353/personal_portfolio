@@ -811,3 +811,9 @@ li + li { margin-top: 6px; }
   .site-footer { padding-block-end: calc(90px + env(safe-area-inset-bottom)); }
   .toast { bottom: calc(74px + env(safe-area-inset-bottom)); }
 }
+
+.contact-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-block-end: 24px; }
+.contact-actions .contact-primary { margin: 0; }
+@media (max-width: 600px) {
+  .contact-actions .button { width: 100%; }
+}
