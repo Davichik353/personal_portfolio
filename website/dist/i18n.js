@@ -191,7 +191,8 @@ export function setupI18n(dictionaries = {}, options = {}) {
     writeStorage(PREFERENCE_KEY, language.code);
     try {
       const url = new URL(window.location.href);
-      url.searchParams.set('lang', language.code);
+      if (language.code === 'ru') url.searchParams.delete('lang');
+      else url.searchParams.set('lang', language.code);
       history.replaceState(null, '', url);
     } catch { /* Sandboxed embeds can forbid history changes. */ }
     document.dispatchEvent(new CustomEvent('portfolio:languagechange', {

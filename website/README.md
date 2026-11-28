@@ -32,3 +32,10 @@ npm test
 ```
 
 Tests cover language switching, translation completeness, caching, failures, races, RTL, and safe text rendering. The deployment archive contains only `dist/` and `.openai/hosting.json`; test dependencies are not published.
+
+## Страницы услуг и заявки
+
+- Русская страница находится по адресу `/ru/uslugi/`, узбекская — `/uz/xizmatlar/`. Обе входят в sitemap.
+- Google Search Console показывает поисковые показы и клики по каждой странице. Нажатия на кнопки Telegram со страниц услуг отдельно записываются в Workers Logs (язык и положение кнопки).
+- В Telegram ищите отправленные сообщения по фразам «со страницы услуг портфолио» или «Portfolio xizmatlar sahifasidan». Считайте отдельные диалоги с заявками за тот же период. Переход в Telegram может не закончиться отправкой сообщения, а посетитель может изменить черновик.
+- В Cloudflare откройте Worker `personal-portfolio` → Observability → Logs и отфильтруйте события по `portfolio_telegram_click`. Выберите период в пределах срока хранения журналов и посмотрите значения полей `language` и `placement`.

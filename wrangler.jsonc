@@ -1,0 +1,17 @@
+{
+  "name": "personal-portfolio",
+  "main": "website/analytics-worker.js",
+  "compatibility_date": "2026-11-19",
+  "assets": {
+    "directory": "./website/dist",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/telegram-click"]
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "invocation_logs": false
+    }
+  }
+}
