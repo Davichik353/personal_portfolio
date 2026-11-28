@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css?v=services">
-  <link rel="stylesheet" href="/services.css">
-  <script type="module" src="/services.js"></script>
+  <link rel="stylesheet" href="/services.css?v=brief">
+  <script type="module" src="/services.js?v=brief"></script>
 </head>
 <body class="services-page">
   <header class="service-nav service-shell">
@@ -57,10 +57,20 @@
         <li class="service-card"><h3>Tekshiramiz va ishga tushiramiz</h3><p>Mobil versiya, havolalar va so‘rov yuborish jarayonini tekshirib, saytni e’lon qilaman.</p></li>
       </ol>
     </section>
-    <section class="service-section service-final" aria-labelledby="contact-title">
-      <h2 id="contact-title">Qanday sayt kerakligini ayting</h2>
+    <section class="service-section service-final" id="project-brief" aria-labelledby="contact-title">
+      <h2 id="contact-title">Loyihani muhokama qilish</h2>
       <p>Kompaniya nima bilan shug‘ullanishi va mijozlar saytda nima qila olishi kerakligini yozing. Shunga qarab ish hajmi va narxni baholayman.</p>
-      <a class="button service-cta" href="https://t.me/davichik?text=Salom%21+Portfolio+xizmatlar+sahifasidan+yozayapman.+Menga+quyidagi+biznes+uchun+sayt+kerak%3A+" data-telegram-placement="footer">Saytimni muhokama qilish <span aria-hidden="true">↗</span></a>
+      <div class="brief-fields" hidden data-brief-intro="Salom! Portfolio xizmatlar sahifasidan yozayapman.">
+        <label for="brief-type">Qanday sayt kerak?</label>
+        <select id="brief-type"><option>Kompaniya sayti</option><option>Katalog sayti</option><option>Konfigurator</option><option>Boshqa loyiha</option></select>
+        <label for="brief-notes">Vazifa haqida (ixtiyoriy)</label>
+        <textarea id="brief-notes" rows="3" maxlength="500" placeholder="Masalan, materialni tanlash mumkin bo‘lgan mebel katalogi kerak."></textarea>
+      </div>
+      <div class="brief-actions">
+        <a class="button service-cta" href="https://t.me/davichik?text=Salom%21+Portfolio+xizmatlar+sahifasidan+yozayapman.+Menga+quyidagi+biznes+uchun+sayt+kerak%3A+" data-telegram-placement="footer">Telegram’da davom etish <span aria-hidden="true">↗</span></a>
+        <button type="button" class="text-link" data-copy-user data-success="Nom nusxalandi" data-fallback="Nusxalash uchun @davichik nomini belgilang" hidden>@davichik nomini nusxalash</button>
+      </div>
+      <output class="brief-status" aria-live="polite"></output>
     </section>
   </main>
   <footer class="service-footer service-shell"><a href="/?lang=uz">Portfolio</a><a href="https://github.com/Davichik353">GitHub ↗</a></footer>

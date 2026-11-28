@@ -1,5 +1,5 @@
 import { setupI18n, t } from './i18n.js';
-import { en, uz } from './locales.js?v=work-experience';
+import { en, uz } from './locales.js?v=profile';
 
 // Keep offscreen media lazy and recover a failed local image once.
 document.querySelectorAll('img[src]').forEach((image) => {

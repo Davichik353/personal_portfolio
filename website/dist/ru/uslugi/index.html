@@ -19,8 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="/styles.css?v=services">
-  <link rel="stylesheet" href="/services.css">
-  <script type="module" src="/services.js"></script>
+  <link rel="stylesheet" href="/services.css?v=brief">
+  <script type="module" src="/services.js?v=brief"></script>
 </head>
 <body class="services-page">
   <header class="service-nav service-shell">
@@ -57,10 +57,20 @@
         <li class="service-card"><h3>Проверяем и запускаем</h3><p>Проверяю мобильную версию, ссылки и путь до заявки, затем публикую сайт.</p></li>
       </ol>
     </section>
-    <section class="service-section service-final" aria-labelledby="contact-title">
-      <h2 id="contact-title">Расскажи, какой сайт нужен</h2>
+    <section class="service-section service-final" id="project-brief" aria-labelledby="contact-title">
+      <h2 id="contact-title">Обсудить проект</h2>
       <p>Напиши, чем занимается компания и что клиенты должны уметь делать на сайте. По этим деталям смогу оценить объём и стоимость.</p>
-      <a class="button service-cta" href="https://t.me/davichik?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9F%D0%B8%D1%88%D1%83+%D1%81%D0%BE+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B+%D1%83%D1%81%D0%BB%D1%83%D0%B3+%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE.+%D0%9C%D0%BD%D0%B5+%D0%BD%D1%83%D0%B6%D0%B5%D0%BD+%D1%81%D0%B0%D0%B9%D1%82+%D0%B4%D0%BB%D1%8F+" data-telegram-placement="footer">Обсудить мой сайт <span aria-hidden="true">↗</span></a>
+      <div class="brief-fields" hidden data-brief-intro="Здравствуйте! Пишу со страницы услуг портфолио.">
+        <label for="brief-type">Какой сайт нужен?</label>
+        <select id="brief-type"><option>Сайт компании</option><option>Сайт-каталог</option><option>Конфигуратор</option><option>Другой проект</option></select>
+        <label for="brief-notes">О задаче (по желанию)</label>
+        <textarea id="brief-notes" rows="3" maxlength="500" placeholder="Например, нужен каталог мебели с выбором материала."></textarea>
+      </div>
+      <div class="brief-actions">
+        <a class="button service-cta" href="https://t.me/davichik?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9F%D0%B8%D1%88%D1%83+%D1%81%D0%BE+%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D1%8B+%D1%83%D1%81%D0%BB%D1%83%D0%B3+%D0%BF%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D0%B8%D0%BE.+%D0%9C%D0%BD%D0%B5+%D0%BD%D1%83%D0%B6%D0%B5%D0%BD+%D1%81%D0%B0%D0%B9%D1%82+%D0%B4%D0%BB%D1%8F+" data-telegram-placement="footer">Продолжить в Telegram <span aria-hidden="true">↗</span></a>
+        <button type="button" class="text-link" data-copy-user data-success="Имя скопировано" data-fallback="Для копирования выделите @davichik" hidden>Скопировать @davichik</button>
+      </div>
+      <output class="brief-status" aria-live="polite"></output>
     </section>
   </main>
   <footer class="service-footer service-shell"><a href="/">Портфолио</a><a href="https://github.com/Davichik353">GitHub ↗</a></footer>

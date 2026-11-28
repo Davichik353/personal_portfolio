@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" data-i18n-content="metaDescription" content="Давлатбек Абдурасулов — Full-Stack Developer. Веб-приложения, мобильная разработка, Python и коммерческий опыт. Обсудим ваш проект.">
+  <meta name="description" data-i18n-content="metaDescription" content="Портфолио Давлатбека Абдурасулова. 3D-каталог мебели для VIVID ADS, учебная платформа AI Code Mentor, мобильные приложения и опыт ИТ-поддержки в Result school.">
   <meta name="theme-color" content="#262626">
   <meta name="color-scheme" content="dark">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Давлатбек Абдурасулов — Full-Stack Developer">
-  <meta property="og:description" content="Коммерческие веб-сервисы, мобильные приложения, API и AI-интеграции.">
+  <meta property="og:description" content="Портфолио Давлатбека Абдурасулова. 3D-каталог мебели для VIVID ADS, учебная платформа AI Code Mentor, мобильные приложения и опыт ИТ-поддержки в Result school.">
   <meta property="og:url" content="https://personal-portfolio.abddavlat3.workers.dev/">
   <meta property="og:image" content="https://personal-portfolio.abddavlat3.workers.dev/assets/portfolio-share.jpg">
   <meta property="og:image:width" content="1200">
@@ -17,15 +17,15 @@
   <meta property="og:locale" content="ru_RU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Давлатбек Абдурасулов — Full-Stack Developer">
-  <meta name="twitter:description" content="Коммерческие веб-сервисы, мобильные приложения, API и AI-интеграции.">
+  <meta name="twitter:description" content="Портфолио Давлатбека Абдурасулова. 3D-каталог мебели для VIVID ADS, учебная платформа AI Code Mentor, мобильные приложения и опыт ИТ-поддержки в Result school.">
   <meta name="twitter:image" content="https://personal-portfolio.abddavlat3.workers.dev/assets/portfolio-share.jpg">
   <title data-i18n="pageTitle">Давлатбек Абдурасулов — Full-Stack Developer</title>
   <link rel="canonical" href="https://personal-portfolio.abddavlat3.workers.dev/">
   <link rel="icon" href="./assets/favicon.png" type="image/png">
   <link rel="preload" as="image" href="./assets/adnaut-scene.jpg">
-  <link rel="stylesheet" href="./styles.css?v=services">
+  <link rel="stylesheet" href="./styles.css?v=profile">
 
-  <script type="module" src="./app.js?v=work-experience"></script>
+  <script type="module" src="./app.js?v=profile"></script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"></div>
@@ -64,7 +64,7 @@
     <section class="hero scene-hero" aria-labelledby="hero-title">
       <div class="scene-intro">
         <h1 class="hero-title" id="hero-title"><span data-i18n="firstName">Давлатбек</span><br><span data-i18n="lastName">Абдурасулов.</span></h1>
-        <p class="hero-lead" data-i18n="heroLead">Создаю коммерческие веб-сервисы и мобильные приложения. Проектирую интерфейсы, серверную логику, API и интеграции — от анализа задачи и прототипа до запуска и развития продукта.</p>
+        <p class="hero-lead" data-i18n="heroLead">Full-stack разработчик. Создаю сайты для бизнеса и мобильные приложения. В моём портфолио — конфигуратор мебели с заказом через Telegram и платформа для практики программирования.</p>
       </div>
       <figure class="scene-media">
         <div class="scene-actions">
@@ -79,14 +79,16 @@
       </figure>
     </section>
 
-    <section class="scene-panels" aria-labelledby="scene-panels-title">
-      <div class="scene-manifesto">
-        <p class="notranslate" translate="no">FULL-STACK DEVELOPER</p>
-        <h2 id="scene-panels-title">Frontend.<br>Backend.<br><span>Mobile.</span></h2>
-      </div>
-      <a class="scene-yellow scene-chart" href="#projects"><span data-i18n="projectsTitle">Избранные проекты.</span></a>
-      <a class="scene-yellow scene-about" href="#about"><span data-i18n="heroFootnote">Frontend · Backend · Mobile</span><span aria-hidden="true">↗</span></a>
-    </section>
+    <nav class="scene-panels" aria-labelledby="projects-title">
+      <a class="feature-vivid" href="#vivid-case">
+        <img src="./assets/vivid-case-poster.jpg" alt="" loading="lazy" decoding="async">
+        <div class="feature-caption"><strong translate="no">VIVID ADS</strong><span data-i18n="featureVivid">От 3D-модели мебели до заявки в Telegram</span></div>
+      </a>
+      <a class="feature-mentor" href="#mentor-case">
+        <strong translate="no">AI Code Mentor</strong><span data-i18n="featureMentor">Запуск кода и AI-подсказки в браузере</span>
+      </a>
+      <a class="feature-about" href="#about" data-i18n="navAbout">О себе</a>
+    </nav>
 
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading"><h2 class="section-title" id="projects-title" data-i18n="projectsTitle">Избранные проекты.</h2><p class="section-intro" data-i18n="projectsIntro">Веб-сервисы, мобильные приложения и AI-инструменты. Четыре проекта из моей практики.</p></div>
@@ -180,10 +182,13 @@
     </section>
 
     <section class="section" id="about" aria-labelledby="about-title">
-      <div class="section-heading"><h2 class="section-title" id="about-title" data-i18n="aboutTitle">От задачи до работающего продукта.</h2></div>
-      <div class="about-layout"><div class="about-copy"><p data-i18n="aboutText">Я — Full-Stack Developer с реальным опытом коммерческих проектов. Работаю с интерфейсами, серверной логикой и мобильными приложениями. Помогаю превратить идею в понятный, работающий продукт.</p><p data-i18n="aboutInterests">Интересуюсь UI/UX, анимациями, нейросетями, блокчейном и backend-разработкой. Продолжаю учиться и осваивать новые технологии.</p></div>
+      <div class="section-heading"><h2 class="section-title" id="about-title" data-i18n="aboutTitle">О себе</h2></div>
+      <div class="about-layout"><div class="about-copy"><p data-i18n="aboutText">Я Давлатбек Абдурасулов, full-stack разработчик и системный администратор в Result school. В проектах для бизнеса занимаюсь и интерфейсом, и тем, что происходит после нажатия кнопки. В VIVID ADS, например, связал выбор отделки в 3D с заявкой на выбранную мебель.</p><p data-i18n="aboutInterests">В Result school поддерживаю 9 филиалов и более 200 сотрудников. Опыт в SMM тоже пригодился в разработке. Когда проектирую каталог, смотрю на него глазами покупателя. Легко ли найти товар, выбрать вариант и задать вопрос?</p>
+          <a class="text-link about-case-link" href="#vivid-case" data-i18n="aboutCase">Посмотреть кейс VIVID ADS</a>
+        </div>
         <div class="skills-grid">
           <div class="skill-group"><h3 data-i18n="development">Разработка</h3><div class="tags notranslate" translate="no"><span>Flutter</span><span>Dart</span><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>FastAPI</span><span>Rust</span><span>API</span><span>Git</span></div></div>
+          <div class="skill-group"><h3 data-i18n="itSkills">Системное администрирование</h3><div class="tags notranslate" translate="no"><span>Windows Server</span><span>Active Directory</span><span>Microsoft 365</span></div></div>
           <div class="skill-group"><h3 data-i18n="designTools">Дизайн и инструменты</h3><div class="tags notranslate" translate="no"><span>UI/UX</span><span>Photoshop</span><span>Trello</span><span>Jira</span><span>Slack</span></div></div>
           <div class="skill-group"><h3 data-i18n="spokenLanguages">Языки общения</h3><ul class="language-list"><li><span data-i18n="uzbek">Узбекский</span><span data-i18n="native">Родной</span></li><li><span data-i18n="russian">Русский</span><span data-i18n="advanced">Продвинутый</span></li><li><span data-i18n="english">Английский</span><span data-i18n="basic">Базовый</span></li></ul></div>
         </div>

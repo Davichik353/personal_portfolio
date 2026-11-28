@@ -25,3 +25,21 @@
   .service-shell { width: calc(100% - 28px); }
   .service-cta { width: 100%; }
 }
+
+.brief-fields { max-width: 42rem; display: grid; gap: 8px; }
+.brief-fields[hidden], .brief-actions [hidden] { display: none; }
+.brief-fields label { font-weight: 500; }
+.brief-fields label:not(:first-child) { margin-top: 8px; }
+.brief-fields select, .brief-fields textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+.brief-fields textarea { resize: vertical; }
+.brief-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 20px; }
+.brief-actions .text-link { background: transparent; border: 0; color: var(--ink); min-height: 44px; cursor: pointer; }
+.brief-status:not(:empty) { display: block; margin-top: 8px; }
